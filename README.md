@@ -1,5 +1,5 @@
 CSS TOGGLE BOX DEMO WITHOUT JS
 
-PREVIEW: (https://peterhencz.github.io/css-plays/)
+Preview: (https://peterhencz.github.io/css-plays/)
 
-CODEPEN: (https://codepen.io/peterhencz/pen/NVKVNJ)
+CodePen: (https://codepen.io/peterhencz/pen/NVKVNJ)
