@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300");
+* {
+  font-family: "Roboto", sans-serif;
+  text-decoration: none;
+}
+html {
+  background: #e2e1e0;
+  padding: 2em 5em;
+}
+.wrapper {
+  background: #fff;
+  border-radius: 0.5em;
+  width: 70em;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+.main {
+  border-radius: 0.5em 0 0 0.5em;
+  width: 25em;
+  color: white;
+  background-image: linear-gradient(15deg, #13547a 0%, #53beb2 100%);
+}
+.title {
+  height: 2em;
+  font-size: 1.3em;
+}
+.desc {
+  font-size: 0.8em;
+  color: grey;
+}
+.item {
+  margin: 0.5em 0.8em;
+  width: 28%;
+  height: 10em;
+  cursor: pointer;
+}
+.wrapper > #parent > .item:hover {
+  cursor: pointer;
+}
+div#parent {
+  display: flex;
+  margin: 1em;
+  width: 70em;
+  height: 12em;
+  pointer-events: none;
+  flex-flow: row wrap;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  overflow: hidden;
+}
+label {
+  border: solid 1px #f4baba;
+  position: relative;
+  width: 9em;
+  height: 1em;
+  padding: 0.5em;
+  cursor: pointer;
+  font-size: 0.8em;
+}
+h1 {
+  display: inline-block;
+  padding: 0.5em 5em 0.5em 0.5em;
+  margin-bottom: 2em;
+  background: #ffffff;
+}
+h2 {
+  font-size: 1.7em;
+  margin: 1.5em;
+}
+#button {
+  position: relative;
+}
+#button::before {
+  content: "Show more...";
+}
+#toggle {
+  display: none;
+}
+#toggle:checked + #button + #parent {
+  height: 33em;
+  padding-bottom: 4em;
+}
+#toggle:checked + #button:before {
+  content: "Show less...";
+}
