@@ -10,6 +10,9 @@ html {
   padding: 2em 5em;
 }
 
+img {
+  width: 1em;
+}
 .wrapper {
   background: #fff;
   border-radius: 0.5em;
