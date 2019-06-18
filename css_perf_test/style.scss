@@ -1,3 +1,8 @@
+$curve: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+$items: 4; //number of balls in the spinner
+$delay: 0.3; // animation delay between the balls
+$time: 0.8s; // animation time
+
 body {
   display: grid;
   place-items: center center;
@@ -14,10 +19,10 @@ body {
 
 .ball,
 .shadow {
-  animation-duration: 0.8s;
+  animation-duration: $time;
   animation-iteration-count: infinite;
   animation-direction: alternate;
-  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  animation-timing-function: $curve;
 }
 
 .ball {
@@ -28,7 +33,7 @@ body {
   height: 5em;
   background: #ff502f;
   border-radius: 50%;
-  animation-name: bounce;
+  // animation-name: bounce;
 }
 
 .shadow {
@@ -38,27 +43,14 @@ body {
   height: 1em;
   border-radius: 50%;
   background-color: transparent;
-  animation-name: shadow;
+  // animation-name: shadow;
 }
 
-.ball:nth-child(1),
-.shadow:nth-child(1) {
-  animation-delay: 0.3s;
-}
-
-.ball:nth-child(2),
-.shadow:nth-child(2) {
-  animation-delay: 0.6s;
-}
-
-.ball:nth-child(3),
-.shadow:nth-child(3) {
-  animation-delay: 0.9s;
-}
-
-.ball:nth-child(4),
-.shadow:nth-child(4) {
-  animation-delay: 1.2s;
+@for $i from 1 through $items {
+  .ball:nth-child(#{$i}),
+  .shadow:nth-child(#{$i}) {
+    animation-delay: #{$delay * $i}s;
+  }
 }
 
 @keyframes bounce {
@@ -72,6 +64,7 @@ body {
     transform: scaleX(1.3) translateY(0);
   }
 }
+
 @keyframes shadow {
   0% {
     transform: scaleX(1);
@@ -82,5 +75,3 @@ body {
     transform: scaleX(0.5);
   }
 }
-
-/*# sourceMappingURL=style.css.map */
