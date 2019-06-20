@@ -13,30 +13,31 @@ body {
 }
 
 .ball {
-  z-index: 1;
-  justify-self: center;
-  align-self: end;
-  width: 5em;
-  height: 5em;
-  background: #ff502f;
-  border-radius: 50%;
   animation-name: bounce;
-}
-
-.shadow {
-  width: 4em;
-  height: 1em;
-  border-radius: 50%;
-  justify-self: center;
-  background-color: transparent;
-}
-
-.ball,
-.shadow {
   animation-duration: 0.8s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
   animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  justify-self: center;
+  width: 5em;
+  height: 5em;
+  background: #ff502f;
+  border-radius: 50%;
+  z-index: 1;
+  align-self: end;
+}
+
+.shadow {
+  animation-name: shadow;
+  animation-duration: 0.8s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  justify-self: center;
+  width: 4em;
+  height: 1em;
+  background: transparent;
+  border-radius: 50%;
 }
 
 .ball:nth-child(1),

@@ -1,7 +1,20 @@
-$curve: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-$items: 4; //number of balls in the spinner
-$delay: 0.3; // animation delay between the balls
-$time: 0.8s; // animation time
+@import "./_variables.scss";
+
+@mixin animation_props($animation_name) {
+  animation-name: $animation_name;
+  animation-duration: $time;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: $curve;
+}
+
+@mixin element_props($width, $height, $bg_color) {
+  justify-self: center;
+  width: $width;
+  height: $height;
+  background: $bg_color;
+  border-radius: $element_radius;
+}
 
 body {
   display: grid;
@@ -18,31 +31,16 @@ body {
 }
 
 .ball {
+  @include animation_props(bounce);
+  @include element_props(5em, 5em, #ff502f);
+
   z-index: 1;
-  justify-self: center;
   align-self: end;
-  width: 5em;
-  height: 5em;
-  background: #ff502f;
-  border-radius: 50%;
-  animation-name: bounce;
 }
 
 .shadow {
-  width: 4em;
-  height: 1em;
-  border-radius: 50%;
-  justify-self: center;
-  background-color: transparent;
-  // animation-name: shadow;
-}
-
-.ball,
-.shadow {
-  animation-duration: $time;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  animation-timing-function: $curve;
+  @include animation_props(shadow);
+  @include element_props(4em, 1em, transparent);
 }
 
 @for $i from 1 through $items {
