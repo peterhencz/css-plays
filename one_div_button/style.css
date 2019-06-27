@@ -6,12 +6,14 @@ body {
 
 .button {
   position: relative;
-  width: 160px;
-  border-radius: 5px;
+  width: 320px;
+  border-radius: 4px;
   color: #ffffff;
   outline: none;
   letter-spacing: 0.5px;
-  height: 52px;
+  height: 108px;
+  font-family: "DM Sans", sans-serif;
+  background: #c7cdd1;
 }
 
 .button:before,
@@ -20,17 +22,18 @@ body {
   top: 0;
   right: 0;
   position: absolute;
-  line-height: 52px;
+  line-height: 108px;
   vertical-align: middle;
   text-align: center;
-  transition: ease-in-out 0.3s;
+  transition: 0.2s;
+  transition-timing-function: cubic-bezier(0.41, 0.24, 0.96, 0.83);
 }
 
 .button:before {
   content: "yolo";
-  font-size: 16px;
-  border-radius: 2px 0 0 2px;
-  width: 108px;
+  font-size: 28px;
+  border-radius: 4px 0 0 4px;
+  width: 216px;
   color: #fff;
   background: #c7cdd1;
   left: 0;
@@ -43,23 +46,37 @@ body {
 .button:after {
   font-family: "Material Icons";
   content: "face";
-  font-size: 20px;
-  border-radius: 0 2px 2px 0;
-  width: 52px;
+  font-size: 32px;
+  border-radius: 0 4px 4px 0;
+  width: 108px;
   background: #0fae98;
   right: 0;
 }
 
 .button:hover.button:after {
-  width: 160px;
+  width: 320px;
   content: "highlight_off";
-  border-radius: 2px;
-  font-size: 20px;
+  border-radius: 4px;
+  font-size: 48px;
   background: #dd4e4e;
   cursor: not-allowed;
+  animation: pop 0.2s;
 }
 
 .button:active.button:after,
 .button:active.button:before {
   background: #c7cdd1;
+  color: #dd4e4e;
+}
+
+@keyframes pop {
+  0% {
+    border-radius: 0 4px 4px 0;
+  }
+  99% {
+    border-radius: 20% 0 0 20%;
+  }
+  100% {
+    border-radius: 0 4px 4px 0;
+  }
 }
