@@ -1,0 +1,61 @@
+body {
+  display: grid;
+  place-items: center center;
+  height: 60vh;
+}
+
+.button {
+  position: relative;
+  width: 118px;
+  border-radius: 5px;
+  color: #ffffff;
+  outline: none;
+  letter-spacing: 0.5px;
+  height: 52px;
+}
+
+.button:before,
+.button:after {
+  height: 100%;
+  top: 0;
+  right: 0;
+  position: absolute;
+  line-height: 52px;
+  vertical-align: middle;
+  text-align: center;
+  transition: ease-in-out 0.3s;
+}
+
+.button:before {
+  content: "@";
+  font-size: 16px;
+  border-radius: 2px 0 0 2px;
+  width: 66px;
+  color: #fff;
+  background: #566b80;
+  left: 0;
+}
+
+.button:hover.button:before {
+  background: #0fae98;
+}
+
+.button:after {
+  font-family: "Material Icons";
+  content: "face";
+  font-size: 24px;
+  border-radius: 0 2px 2px 0;
+  width: 52px;
+  background: #0fae98;
+  right: 0;
+}
+
+.button:hover.button:after {
+  background: #566b80;
+}
+
+.button:active.button:after,
+.button:active.button:before {
+  top: 4px;
+  background: #566b80;
+}
