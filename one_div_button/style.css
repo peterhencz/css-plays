@@ -32,7 +32,7 @@ body {
   border-radius: 2px 0 0 2px;
   width: 108px;
   color: #fff;
-  background: #566b80;
+  background: #c7cdd1;
   left: 0;
 }
 
@@ -43,7 +43,7 @@ body {
 .button:after {
   font-family: "Material Icons";
   content: "face";
-  font-size: 24px;
+  font-size: 20px;
   border-radius: 0 2px 2px 0;
   width: 52px;
   background: #0fae98;
@@ -52,11 +52,14 @@ body {
 
 .button:hover.button:after {
   width: 160px;
+  content: "highlight_off";
   border-radius: 2px;
+  font-size: 20px;
+  background: #dd4e4e;
+  cursor: not-allowed;
 }
 
 .button:active.button:after,
 .button:active.button:before {
-  top: 4px;
-  background: #566b80;
+  background: #c7cdd1;
 }
