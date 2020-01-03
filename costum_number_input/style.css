@@ -1,0 +1,14 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+
+body {
+  display: grid;
+  place-items: center center;
+  height: 100vh;
+  font-size: 12px;
+  background-color: #fff;
+}
+
+input {
+  font-size: 24px;
+  height: 32px;
+}

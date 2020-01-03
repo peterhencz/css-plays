@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+
+body {
+  display: grid;
+  place-items: center center;
+  height: 100vh;
+  font-size: 12px;
+  background-color: #fff;
+}
+
+/* .wrapper {
+  padding: 10px;
+  width: 800px;
+  height: 500px;
+  border: 1px solid tomato;
+  display: flex;
+  flex-wrap: wrap;
+  flex: auto;
+}
+
+.child {
+  margin: auto;
+  width: 100%;
+  border: 1px solid grey;
+  height: 100px;
+} */
+
+.box {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.box > * {
+  flex: 1 1 200px;
+}
